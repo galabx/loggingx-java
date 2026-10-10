@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: loggingx
+
+loggingx:
+  security:
+    jwt:
+      # Override this value with LOGGINGX_SECURITY_JWT_SECRET in production.
+      secret: ${LOGGINGX_SECURITY_JWT_SECRET:change-this-development-secret-before-production-2026}
+      expiration: ${LOGGINGX_SECURITY_JWT_EXPIRATION:2h}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
